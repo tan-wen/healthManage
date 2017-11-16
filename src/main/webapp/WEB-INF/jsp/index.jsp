@@ -23,10 +23,6 @@
 
 <!-- page specific plugin styles -->
 
-<!-- fonts -->
-
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
-
 <!-- ace styles -->
 
 <link rel="stylesheet" href="css/ace.min.css" />
@@ -54,8 +50,8 @@
 						<div class="center">
 							<h1>
 								<i class="icon-leaf green"></i>
-								<span class="red">Ace</span>
-								<span class="white">Application</span>
+								<span class="red">澳洋</span>
+								<span class="white">大健康</span>
 							</h1>
 							<h4 class="blue">&copy; 澳洋健康管理系统</h4>
 						</div>
@@ -107,23 +103,6 @@
 											</fieldset>
 										</form>
 
-										<div class="social-or-login center">
-											<span class="bigger-110">Or Login Using</span>
-										</div>
-
-										<div class="social-login center">
-											<a class="btn btn-primary">
-												<i class="icon-facebook"></i>
-											</a>
-
-											<a class="btn btn-info">
-												<i class="icon-twitter"></i>
-											</a>
-
-											<a class="btn btn-danger">
-												<i class="icon-google-plus"></i>
-											</a>
-										</div>
 									</div>
 									<!-- /widget-main -->
 
@@ -280,7 +259,7 @@
 
 	<!--[if !IE]> -->
 
-	<script src="js/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/jquery-2.0.3.min.js"></script>
 
 	<!-- <![endif]-->
 

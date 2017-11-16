@@ -26,10 +26,10 @@ public class UserController {
 	@RequestMapping("list")
 	@ResponseBody
 	public PageInfo<User> list(
-			@RequestParam(required=true,defaultValue="1") Integer curPage,
-            @RequestParam(required=false,defaultValue="10") Integer pageSize) {
+			@RequestParam(required=true,defaultValue="1") Integer page,
+            @RequestParam(required=false,defaultValue="10") Integer rows) {
 		
-		PageHelper.startPage(curPage, pageSize);
+		PageHelper.startPage(page, rows);
 		return new PageInfo<User>(userService.findAll());
 	}
 }
