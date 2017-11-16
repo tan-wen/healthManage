@@ -2,4 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aoyang.health.admin.dao.UserDao">
 	
+	<select id="findAll" resultType="User">
+		SELECT * FROM USER
+	</select>
 </mapper>

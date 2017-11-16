@@ -1,5 +1,8 @@
 package com.aoyang.health.admin.dao;
 
-public interface UserDao {
+import com.aoyang.health.admin.entity.User;
 
+public interface UserDao extends BaseDao<User>{
+
+	
 }

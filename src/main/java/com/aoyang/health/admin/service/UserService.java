@@ -1,5 +1,7 @@
 package com.aoyang.health.admin.service;
 
-public interface UserService {
+import com.aoyang.health.admin.entity.User;
+
+public interface UserService extends BaseService<User> {
 
 }
