@@ -1,45 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
-<!DOCTYPE>
+<%@ include file="/WEB-INF/common/taglib.jspf" %>
+
+<!DOCTYPE html>
 <html>
 <head>
-<base href="<%=basePath%>">
 <title>澳洋健康管理系统</title>
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-<link rel="stylesheet" href="css/bootstrap.min.css"  />
-<link rel="stylesheet" href="css/font-awesome.min.css" />
-
-<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-
-<!-- page specific plugin styles -->
-
-<!-- ace styles -->
-
-<link rel="stylesheet" href="css/ace.min.css" />
-<link rel="stylesheet" href="css/ace-rtl.min.css" />
-
-<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-<!-- inline styles related to this page -->
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+<%@ include file="/WEB-INF/common/head.jspf" %>
 </head>
 <body class="login-layout">
 	<div class="main-container">
@@ -255,38 +221,7 @@
 	</div>
 	<!-- /.main-container -->
 
-	<!-- basic scripts -->
-
-	<!--[if !IE]> -->
-
-	<script src="js/jquery-2.0.3.min.js"></script>
-
-	<!-- <![endif]-->
-
-	<!--[if IE]>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<![endif]-->
-
-	<!--[if !IE]> -->
-
-	<script type="text/javascript">
-		window.jQuery || document.write("<script src='js/jquery-2.0.3.min.js'>" + "<"+"/script>");
-	</script>
-
-	<!-- <![endif]-->
-
-	<!--[if IE]>
-	<script type="text/javascript">
-	 window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-	</script>
-	<![endif]-->
-
-	<script>
-		if ("ontouchend" in document)
-			document.write("<script src='js/jquery.mobile.custom.min.js'>" + "<"+"/script>");
-	</script>
-
-	<!-- inline scripts related to this page -->
+	<%@ include file="/WEB-INF/common/foot.jspf" %>
 
 	<script>
 		function show_box(id) {
