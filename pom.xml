@@ -158,6 +158,11 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+		<dependency>
+          <groupId>taglibs</groupId>
+          <artifactId>standard</artifactId>
+          <version>1.1.2</version>
+      	</dependency>
 		<!-- JSTL标签类 -->
 		<dependency>
 			<groupId>jstl</groupId>
