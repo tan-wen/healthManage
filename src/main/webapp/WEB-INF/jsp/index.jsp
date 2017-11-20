@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>澳洋健康管理系统</title>
+<title>${sysName}</title>
 <%@ include file="/WEB-INF/common/head.jspf" %>
 </head>
 <body class="login-layout">
