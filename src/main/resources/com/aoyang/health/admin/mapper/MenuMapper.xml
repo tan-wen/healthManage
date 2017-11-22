@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aoyang.health.admin.dao.MenuDao">
+
+	<resultMap type="Menu" id="menuMap">
+		<id property="id" column="ID" />
+		<result property="name" column="NAME" />
+		<result property="order" column="ORDER" />
+		<result property="url" column="URL" />
+		<association property="parentMenu" javaType="Menu" columnPrefix="P_">
+			<id property="id" column="ID" />
+			<result property="name" column="NAME" />
+			<result property="order" column="ORDER" />
+			<result property="url" column="URL" />
+		</association>
+		<collection property="subMenuList" ofType="Menu" columnPrefix="S_">
+			<id property="id" column="ID" />
+			<result property="name" column="NAME" />
+			<result property="order" column="ORDER" />
+			<result property="url" column="URL" />
+		</collection>
+	</resultMap>
+
+    <sql id="cols">
+            ID
+        <if test="name != null">
+            , NAME
+        </if>
+        <if test="parentId != null">
+            , PARENT_ID
+        </if>
+        <if test="url != null">
+            , URL
+        </if>
+        <if test="order != null">
+            , ORDER
+        </if>
+        <if test="deleted != null">
+            , DELETED
+        </if>
+        <if test="createTime != null">
+            , CREATED_TIME
+        </if>
+        <if test="createdBy != null">
+            , CREATED_BY
+        </if>
+        <if test="lastModifiedTime != null">
+            , LAST_MODIFIED_TIME
+        </if>
+        <if test="lastModifiedBy != null">
+            , LAST_MODIFIED_BY
+        </if>
+    </sql>
+
+	<select id="findAll" resultMap="menuMap">
+		SELECT
+			 A.ID ID 
+			,A.NAME NAME
+			,A.PARENT_ID PARENT_ID
+			,A.URL URL
+			,A.ORDER "ORDER"
+			
+			,B.NAME P_NAME
+			,B.URL P_URL
+			
+			,C.NAME S_NAME
+			,C.URL S_URL
+			
+		FROM MENU A 
+			LEFT JOIN MENU B ON A.PARENT_ID = B.ID
+			LEFT JOIN MENU C ON C.PARENT_ID = A.ID
+	</select>
+	
+	<insert id="save">
+		INSERT INTO MENU ( <include refid="cols"/> )
+		VALUES(
+			#{id}
+			<if test="name != null">
+	            , #{name}
+	        </if>
+	        <if test="parentId != null">
+	            , #{parentId}
+	        </if>
+	        <if test="url != null">
+	            , #{url}
+	        </if>
+	        <if test="order != null">
+	            ,#{order}
+	        </if>
+	        <if test="deleted != null">
+	            ,#{deleted}
+	        </if>
+	        <if test="createdTime != null">
+	            ,#{createdTime}
+	        </if>
+	        <if test="createdBy != null">
+	            , #{createdBy}
+	        </if>
+	        <if test="lastModifiedTime != null">
+	            , #{lastModifiedTime}
+	        </if>
+	        <if test="lastModifiedBy != null">
+	            , #{lastModifiedBy}
+	        </if>
+		)
+	</insert>
+	
+</mapper>
