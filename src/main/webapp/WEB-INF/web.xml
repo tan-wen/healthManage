@@ -7,7 +7,11 @@
 	<!-- Spring和mybatis的配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring/spring-mybatis.xml,classpath:spring/spring-quartz.xml</param-value>
+		<param-value>
+			 classpath:spring/spring-mybatis.xml
+			,classpath:spring/spring-quartz.xml
+			,classpath:spring/spring-redis.xml
+		</param-value>
 	</context-param>
 
 	<!-- 编码过滤器 -->

@@ -22,6 +22,7 @@
 			<list>
 				<value>classpath:jdbc.properties</value>
 				<value>classpath:sys.properties</value>
+				<value>classpath:redis.properties</value>
 			</list>
 		</property>
 	</bean>
