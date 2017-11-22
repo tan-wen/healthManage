@@ -46,8 +46,7 @@ public class UserServiceImpl implements UserService {
 	 * 这里只是示例怎么使用Redis缓存数据，在User数据变换时，要及时刷新缓存。在实际的应用中一般缓存的数据为不经常变更的数据
 	 * @see com.aoyang.health.admin.service.BaseService#findAll()
 	 */
-	@Override
-	public List<User> findAll() {
+	public List<User> findAllFromCache() {
 		List<User> users = new ArrayList<>();
 		Set<String> sets = redisTemplate.keys("USER*");
 		if (sets == null || sets.isEmpty()) {
@@ -65,6 +64,11 @@ public class UserServiceImpl implements UserService {
 			}
 		}
 		return users;
+	}
+
+	@Override
+	public List<User> findAll() {
+		return dao.findAll();
 	}
 
 }

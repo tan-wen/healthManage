@@ -6,9 +6,18 @@
 	    "http://www.springframework.org/schema/beans 
 	    http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="testQuartz" class="com.aoyang.health.admin.quartz.TestQuartz" />
+	<!-- ================================================== 调度工厂 ================================================== -->
+	<bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="testTriggerBean" />
+			</list>
+		</property>
+	</bean>
 	
-	<bean id="springQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<!--==================================================== 定时任务类和方法定义 ========================================  -->
+	<bean id="testQuartz" class="com.aoyang.health.admin.quartz.TestQuartz" />
+	<bean id="testQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
 			<ref bean="testQuartz" />
 		</property>
@@ -16,20 +25,11 @@
 			<value>run</value>
 		</property>
 	</bean>
-
-	<!-- ======================== 调度触发器 ======================== -->
-	<bean id="cronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-		<property name="jobDetail" ref="springQtzJobMethod"></property>
-		<property name="cronExpression" value="0/5 * * * * ?"></property>
-	</bean>
-
-	<!-- ======================== 调度工厂 ======================== -->
-	<bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-		<property name="triggers">
-			<list>
-				<ref bean="cronTriggerBean" />
-			</list>
-		</property>
+	
+	<!-- ================================================= 调度触发器 ================================================== -->
+	<bean id="testTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="testQtzJobMethod"></property>
+		<property name="cronExpression" value="59 * * * * ?"></property>
 	</bean>
 	
 </beans>
