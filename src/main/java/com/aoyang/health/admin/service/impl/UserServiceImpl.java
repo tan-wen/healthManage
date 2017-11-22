@@ -1,7 +1,6 @@
 package com.aoyang.health.admin.service.impl;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +9,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import com.alibaba.fastjson.JSON;
 import com.aoyang.health.admin.dao.UserDao;
 import com.aoyang.health.admin.entity.User;
 import com.aoyang.health.admin.service.UserService;
