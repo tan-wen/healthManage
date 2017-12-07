@@ -31,9 +31,9 @@
 							<a href="#">Home</a>
 						</li>
 						<li>
-							<a href="#">Tables</a>
+							<a href="#">用户管理</a>
 						</li>
-						<li class="active">jqGrid plugin</li>
+						<li class="active">列表</li>
 					</ul>
 
 					<div class="nav-search" id="nav-search">

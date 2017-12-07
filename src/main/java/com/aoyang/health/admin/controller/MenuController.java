@@ -8,7 +8,7 @@ import com.aoyang.health.admin.service.MenuService;
 
 @Controller
 @RequestMapping("/admin/menu")
-public class MenuController {
+public class MenuController extends BaseController {
 
 	@Autowired
 	private MenuService menuService;

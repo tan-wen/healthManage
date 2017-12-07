@@ -13,7 +13,7 @@ import com.github.pagehelper.PageInfo;
 
 @Controller
 @RequestMapping("/admin/user")
-public class UserController {
+public class UserController extends BaseController {
 
 	@Autowired
 	private UserService userService;
@@ -31,5 +31,16 @@ public class UserController {
 		
 		PageHelper.startPage(page, rows);
 		return new PageInfo<User>(userService.findAll());
+	}
+	
+	@RequestMapping("add")
+	public String add() {
+		return "user/add";
+	}
+	
+	@RequestMapping("save")
+	public String save(User user) {
+		System.out.println(user);
+		return "redirect:";
 	}
 }
