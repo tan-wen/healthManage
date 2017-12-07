@@ -1,5 +1,7 @@
 package com.aoyang.health.admin.shiro;
 
+import java.util.List;
+
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -42,11 +44,11 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
 		User userLogin = tokenToUser((UsernamePasswordToken)authcToken);
 		//判断用户是否可以登录的逻辑，这里只是演示
-		User userDb = userService.findByName(userLogin.getName());
-		if (userDb != null) {
-			AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(userDb.getName(), userDb.getPassword(), this.getName());
-			return authcInfo;
-		}
+		List<User> userList = userService.findByName(userLogin.getName());
+//		if (userDb != null) {
+//			AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(userDb.getName(), userDb.getPassword(), this.getName());
+//			return authcInfo;
+//		}
 		return null;
 	}
 	
