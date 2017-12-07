@@ -11,7 +11,7 @@
 			 classpath:spring/spring-mybatis.xml
 			,classpath:spring/spring-quartz.xml
 			,classpath:spring/spring-redis.xml
-<!-- 			,classpath:spring/spring-shiro.xml -->
+			,classpath:spring/spring-shiro.xml
 		</param-value>
 	</context-param>
 

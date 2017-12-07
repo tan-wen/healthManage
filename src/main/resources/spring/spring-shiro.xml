@@ -8,14 +8,14 @@
 		<!-- 装配 securityManager -->
 		<property name="securityManager" ref="securityManager" />
 		<!-- 配置登陆页面 -->
-		<property name="loginUrl" value="/index" />
+		<property name="loginUrl" value="/admin" />
 		<!-- 登陆成功后的页面 -->
-		<property name="successUrl" value="/admin/user/index" />
+		<property name="successUrl" value="/admin/homePage" />
 		<property name="unauthorizedUrl" value="/admin" />
 		<!-- 具体配置需要拦截哪些 URL, 以及访问对应的 URL时使用 Shiro 的什么 Filter 进行拦截. -->
 		<property name="filterChainDefinitions">
 			<value>
-				/index = anon
+				/admin = anon
 				/admin/** = authc
 				/css/** = anon
                 /js/** = anon
