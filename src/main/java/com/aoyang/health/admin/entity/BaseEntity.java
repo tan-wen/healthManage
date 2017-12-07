@@ -3,6 +3,9 @@ package com.aoyang.health.admin.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.aoyang.health.admin.util.JsonDateSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 public abstract class BaseEntity implements Serializable {
 
 	/**
@@ -16,8 +19,10 @@ public abstract class BaseEntity implements Serializable {
 	
 	private String lastModifyBy;
 	
+	@JsonSerialize(using=JsonDateSerializer.class)
 	private Date createTime;
 	
+	@JsonSerialize(using=JsonDateSerializer.class)
 	private Date lastModifyTime;
 
 	public String getId() {

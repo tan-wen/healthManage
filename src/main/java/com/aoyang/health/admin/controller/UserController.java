@@ -1,5 +1,7 @@
 package com.aoyang.health.admin.controller;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,7 +42,9 @@ public class UserController extends BaseController {
 	
 	@RequestMapping("save")
 	public String save(User user) {
+		user.setId(UUID.randomUUID().toString());
 		System.out.println(user);
-		return "redirect:";
+		userService.save(user);
+		return "redirect:/admin/user/index";
 	}
 }

@@ -59,7 +59,7 @@
 
 					<div class="row">
 						<div class="col-xs-12">
-							<form class="form-horizontal" role="form" action="admin/user/save">
+							<form class="form-horizontal" role="form" action="admin/user/save" method="post">
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="form-field-1">姓名</label>
 									<div class="col-sm-9">
@@ -74,7 +74,7 @@
 								</div>
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
-										<button class="btn btn-info" type="button">
+										<button class="btn btn-info" type="submit" >
 											<i class="icon-ok bigger-110"></i>
 											Submit
 										</button>
@@ -106,6 +106,7 @@
 				$(this).prev().focus();
 			});
 		});
+		
 	</script>
 </body>
 </html>
