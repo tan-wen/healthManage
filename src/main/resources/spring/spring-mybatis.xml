@@ -29,6 +29,7 @@
 		
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
         <property name="properties" ref="propertiesFactory" />
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
     </bean> 
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

@@ -326,6 +326,12 @@
 				<directory>src/main/resources</directory>
 				<includes>
 					<include>**/*.properties</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
 					<include>**/*.xml</include>
 				</includes>
 				<filtering>false</filtering>
@@ -336,4 +342,44 @@
 			</resource>
 		</resources>
 	</build>
+
+	<profiles>
+		<profile>
+			<!-- 开发环境 -->
+			<id>dev</id>
+			<properties>
+				<profiles.active>dev</profiles.active>
+				<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
+				<jdbc.url>jdbc:mysql://localhost:3306/admin?characterEncoding=utf8</jdbc.url>
+				<jdbc.username>root</jdbc.username>
+                <jdbc.password>root</jdbc.password>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<!-- 测试环境 -->
+			<id>test</id>
+			<properties>
+				<profiles.active>test</profiles.active>
+				<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
+				<jdbc.url>jdbc:mysql://localhost:3306/admin_test?characterEncoding=utf8</jdbc.url>
+				<jdbc.username>root</jdbc.username>
+                <jdbc.password>root</jdbc.password>
+			</properties>
+		</profile>
+		<profile>
+			<!-- 生产环境 -->
+			<id>pro</id>
+			<properties>
+				<profiles.active>pro</profiles.active>
+				<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
+				<jdbc.url>jdbc:mysql://localhost:3306/admin_pro?characterEncoding=utf8</jdbc.url>
+				<jdbc.username>root</jdbc.username>
+                <jdbc.password>root</jdbc.password>
+			</properties>
+		</profile>
+	</profiles>
+	
 </project>
