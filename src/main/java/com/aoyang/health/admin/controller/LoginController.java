@@ -19,7 +19,7 @@ import com.aoyang.health.admin.service.UserService;
 
 @Controller
 @RequestMapping("/admin")
-public class IndexController extends BaseController {
+public class LoginController extends BaseController {
 
 	@Value("#{propertiesFactory['sys.name']}")
 	private String sysName;
@@ -69,5 +69,14 @@ public class IndexController extends BaseController {
 	public String homePage() {
 		
 		return "admin/home";
+	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if (session != null) {
+			session.invalidate();
+		}
+		return "redirect:/admin/";
 	}
 }
