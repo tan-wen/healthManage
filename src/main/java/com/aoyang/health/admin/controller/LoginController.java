@@ -21,7 +21,7 @@ import com.aoyang.health.admin.service.UserService;
 @RequestMapping("/admin")
 public class LoginController extends BaseController {
 
-	@Value("#{propertiesFactory['sys.name']}")
+	@Value("${sys.name}")
 	private String sysName;
 	
 	@Autowired

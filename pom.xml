@@ -326,15 +326,9 @@
 				<directory>src/main/resources</directory>
 				<includes>
 					<include>**/*.properties</include>
-				</includes>
-				<filtering>true</filtering>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
 					<include>**/*.xml</include>
 				</includes>
-				<filtering>false</filtering>
+				<filtering>true</filtering>
 			</resource>
 			<resource>
 				<directory>src/main/java</directory>
