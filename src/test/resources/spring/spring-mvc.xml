@@ -14,7 +14,10 @@
 
 	<!-- 自动扫描该包 -->
 	<context:component-scan base-package="com.aoyang.health.admin.controller"/>
-
+	
+	<!-- controller中使用properties文件中的属性 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:sys.properties" />
+	
 	<!--隐式注册后处理器 -->
 	<context:annotation-config />
 
